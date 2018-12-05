@@ -1,0 +1,91 @@
+.hero-block {
+    padding: 0px 100px 100px 100px;
+
+    @media all and (max-width: $tablet) {
+        padding: 0px;
+    }
+}
+
+.hero {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 200px);
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ccc' fill-opacity='0.4'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    
+    @media all and (max-width: $tablet) {
+        min-height: 400px;
+        padding: 0px 30px;
+    }
+
+    &__content {
+        max-width: 600px;
+        background: #fff;
+        padding: 100px;
+        border-radius: 15px;
+        text-align: center;
+
+        @media all and (max-width: $tablet) {
+            padding: 30px 0px;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+
+            @media all and (max-width: $tablet) {
+                font-size: 32px;
+            }
+        }
+
+        h2 {
+            font-size: 24px;
+            line-height: 24px;
+            font-weight: normal;
+            margin: 0px;
+            padding: 0px;
+
+            @media all and (max-width: $tablet) {
+                font-size: 20px;
+                line-height: 20px;
+            }
+
+            span {
+                border-right: 3px solid $black; 
+                animation: blinking 1s step-end infinite;
+            }
+        }
+        svg {
+            vertical-align: middle;
+            position: relative;
+            top: -2px;
+            padding: 0px 2px;
+        }
+        
+        @keyframes blinking {
+            from, to { border-color: transparent }
+            50% { border-color: $black; }
+        }
+    }
+
+    &__footer {
+        position: absolute;
+        bottom: 15px;
+        width: 100%;
+        text-align: center;
+
+        svg {
+            background: #FFF;
+            padding: 5px;
+            border-radius: 15px;
+            cursor: pointer;
+            position: relative;
+
+            &:hover {
+                fill: $red;
+                stroke: $red;
+            }
+        }
+    }
+}

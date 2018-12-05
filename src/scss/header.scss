@@ -1,0 +1,52 @@
+header {
+    height: 100px;
+
+    @media all and (max-width: $mobile) {
+        height: 60px;
+    }
+
+    nav {
+        background: #FFF;
+        height: 100px;
+        width: 100%;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        padding: 0px 100px;
+        z-index: 99;
+
+        @media all and (max-width: $tablet) {
+            width: calc(100vw - 60px);
+            padding: 0px 30px;
+        }
+        @media all and (max-width: $mobile) {
+            height: 60px;
+        }
+
+        ul {
+            font-size: 0px;
+            padding: 0px;
+            margin: 0px;
+
+            li {
+                display: inline-block;
+                list-style: none;
+                
+                a {
+                    padding: 0px 15px 0px 0px;
+                    color: $black;
+                    font-size: 18px;
+                    line-height: 100px;
+                    height: 100px;
+                    display: block;
+                    text-decoration: none;
+                    
+                    @media all and (max-width: $mobile) {
+                        height: 60px;
+                        line-height: 60px;
+                    }
+                }
+            }
+        }
+    }
+}

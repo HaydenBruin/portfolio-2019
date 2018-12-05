@@ -1,0 +1,65 @@
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+
+    @media all and (max-width: $mobile)
+    {
+        display: block;
+    }
+
+    &__project {
+        flex: 1 0 25%;
+        box-sizing: border-box;
+        background: #eee;
+        text-decoration: none;
+
+        @media all and (min-width: $mobilemax) and (max-width: 850px) {
+            flex: 1 0 50%;
+        }
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+        &--imgwrapper {
+            img {
+                height: 250px;
+                width: 100%;
+                object-fit: cover;
+                object-position: 50% 50%;
+
+                @media all and (max-width: $mobile)
+                {
+                    height: 200px;
+                }
+            }
+        }
+
+        &--content {
+            padding: 30px;
+            color: #333;
+
+            @media all and (max-width: $mobile)
+            {
+                text-align: center;
+            }
+
+            .date {
+                font-size: 16px;
+                font-weight: bold;
+                margin-bottom: 15px;
+            }
+
+            .title {
+                font-size: 20px;
+                font-weight: normal;
+                margin-bottom: 5px;
+            }
+
+            .role {
+                margin-bottom: 15px;
+                font-size: 12px;
+            }
+        }
+    }
+}

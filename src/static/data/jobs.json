@@ -1,0 +1,23 @@
+[
+    {
+        "title": "Dot Performance",
+        "role": "Full Stack PHP Developer",
+        "start": "August 2014",
+        "finish": "December 2016",
+        "url": "https://dotperformance.co.nz"
+    },
+    {
+        "title": "ReserveGroup",
+        "role": "Front-end Developer (C# Umbraco)",
+        "start": "December 2016",
+        "finish": "Feburary 2018",
+        "url": "https://blueocean.consulting"
+    },
+    {
+        "title": "Cucumber",
+        "role": "Front-end Developer",
+        "start": "March 2018",
+        "finish": "",
+        "url": "https://cucumber.co.nz"
+    }
+]

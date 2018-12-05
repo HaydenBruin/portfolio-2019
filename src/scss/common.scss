@@ -1,0 +1,137 @@
+// COLOURS
+$black: #222222;
+$red: #EF4D4D;
+$white: #FFFFFF;
+
+// MEDIA QUERIES
+$tablet: 1023px;
+$tabletmax: 1024px;
+$mobile: 767px;
+$mobilemax: 768px;
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: $black;
+    background: #FFF;
+    padding: 0px;
+    margin: 0px;
+    font-size: 16px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0px auto;
+}
+
+a {
+    background: transparent;
+    color: $black;
+    text-decoration: underline;
+
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 42px;
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+p {
+    color: $black;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: normal;
+
+    &.large {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+.tags {
+    .tag {
+        border-radius: 30px;
+        padding: 5px 15px;
+        font-size: 12px;
+        background: #333;
+        color: $white;
+        display: inline-block;
+        margin-right: 10px;
+        margin-bottom: 10px;
+
+        &.jquery {
+            background: #0769ad;
+        }
+        &.scss {
+            background: #c6538c;
+        }
+        &.git {
+            background: #F05133;
+        }
+        &.gulp {
+            background: #cf4647;
+        }
+        &.html {
+            background: #F16529;
+        }
+        &.php {
+            background: #8892BF;
+        }
+        &.mysql {
+            background: #47809D;
+        }
+        &.paypal {
+            background: #253B80;
+        }
+        &.api {
+            background: #F5DE19;
+            color: #333;
+        }
+        &.vendhq {
+            background: #41AF4B;
+        }
+        &.css {
+            background: #2965F1;
+        }
+    }
+}
+
+button, .button {
+    background: $black;
+    border: 0px;
+    border-radius: 5px;
+    padding: 15px 30px;
+    color: #FFF;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+
+    &:hover {
+        background: #333;
+    }
+}
+
+a {
+    color: $black;
+
+    &:hover, &:focus {
+        color: $red;
+    }
+}
+
+.dash {
+    width: 36px;
+    height: 4px;
+    background-color: $red;
+    margin-bottom: 15px;
+
+    @media all and (max-width: $mobile) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

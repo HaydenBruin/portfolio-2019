@@ -1,0 +1,117 @@
+.project {
+
+    &__project {
+        box-sizing: border-box;
+        background: #eee;
+        text-decoration: none;
+
+        &--imgwrapper {
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+
+            @media all and (max-width: $mobile)
+            {
+                height: 200px;
+            }
+
+            img.blur {
+                position: absolute;
+                left: -15px;
+                top: -15px;
+                height: calc(100% + 30px);
+                width: calc(100% + 30px);
+                max-width: unset;
+                filter: blur(15px);
+                z-index: 4;
+            }
+            img.real {
+                position: relative;
+                z-index: 5;
+                height: 100%;
+                width: 900px;
+                max-width: 100%;
+                object-fit: cover;
+                object-position: 50% 50%;
+                margin: 0px auto;
+                display: inline-block;
+            }
+        }
+
+        &--content {
+            padding: 30px;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @media all and (max-width: $mobile)
+            {
+                display: block;
+                text-align: center;
+            }
+
+            .detail {
+                flex: 1 0 50%;
+
+                &.company {
+                    text-align: right;
+
+                    @media all and (max-width: $mobile)
+                    {
+                        text-align: center;
+                    }
+
+                    .dash {
+                        display: none;
+
+                        @media all and (max-width: $mobile)
+                        {
+                            display: block;
+                            margin-top: 20px;
+                            margin-bottom: 25px;
+                        }
+                    }
+                }
+
+                img {
+                    width: 200px;
+                    max-width: 100%;
+                }
+            }
+
+            .date {
+                font-size: 16px;
+                font-weight: bold;
+                margin-bottom: 15px;
+            }
+
+            .title {
+                font-size: 20px;
+                font-weight: normal;
+                margin-bottom: 5px;
+            }
+
+            .role {
+                margin-bottom: 15px;
+                font-size: 12px;
+            }
+        }
+    }
+    &__description {
+        padding: 30px 0px 50px 0px;
+
+        .container {
+            padding: 0px 30px;
+        }
+
+        &--content {
+
+            mark {
+                font-size: 22px;
+                background: transparent;
+            }
+        }
+    }
+}

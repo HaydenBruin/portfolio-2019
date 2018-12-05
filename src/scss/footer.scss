@@ -1,0 +1,58 @@
+.footer {
+    border-top: 1px solid #f1f1f1;
+    background: #f5f5f5;
+
+    &__contact {
+        max-width: 540px;
+        margin: 0px auto;
+        padding: 50px 30px;
+
+        p {
+            font-size: 24px;
+            line-height: 1.5;
+            font-weight: 400;
+            margin: 0px 0px 15px 0px;
+            padding: 0px;
+
+            @media all and (max-width: $mobile)
+            {
+                font-size: 18px;
+                text-align: center;
+            }
+        }
+        p:last-child {
+            margin-bottom: 0px;
+        }
+    }
+
+    &__copyright {
+        background: $black;
+        color: $white;
+        padding: 30px 100px;
+        display: flex;
+
+        @media all and (max-width: $mobile) {
+            display: block;
+            padding: 30px 30px;
+        }
+
+        p {
+            flex: 1 0 50%;
+            margin: 0px;
+            padding: 0px;
+            color: $white;
+            text-align: center;
+
+            &:first-child { text-align: left; }
+            &:last-child { text-align: right; }
+
+            @media all and (max-width: $mobile) {
+                &:first-child {
+                    text-align: center;
+                    margin-bottom: 15px;
+                }
+                &:last-child { text-align: center; }
+            }
+        }
+    }
+}
