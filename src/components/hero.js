@@ -14,7 +14,7 @@ export default class Hero extends Component {
                 <div className="hero">
                     <div className="hero__content">
                         <h1>Hi, I'm Hayden Bruin</h1>
-                        <h2>I <Icon name="heart" height="24" width="24" /> <span>React</span></h2>
+                        <h2>I <Icon name="heart" height="24" width="24" /> <span>JS</span></h2>
                     </div>
                     <div className="hero__footer">
                         <div onClick={() => this.scrollDown()}>

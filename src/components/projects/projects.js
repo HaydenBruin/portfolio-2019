@@ -1,40 +1,41 @@
-import React, { Component } from 'react'
-import Project from './project';
-
-class Projects extends Component {
-
-    state = {
-        projects: []
+import React from 'react'
+import { StaticQuery, graphql } from 'gatsby'
+//import Project from './project'
+//<Project key={index} project={project} />
+const Projects = ({ data }) => (
+    <div className="projects">
+    {
+        data.allMarkdownRemark.edges.map((project) => {
+            <Project project={project.node.frontmatter} />
+        })
     }
+    </div>
+  )
 
-    componentDidMount = () => {
-        this.loadProjects();
-    }
-
-    loadProjects = async () => {
-        const response = await fetch('/data/projects.json');
-        const projects = await response.json();
-
-        if(projects.length)
-        {
-            this.setState({
-                projects: projects
-            })
+export default props => (
+    <StaticQuery
+      query={graphql`
+      {
+        allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/projects/"}}, sort: {fields: [frontmatter___date], order: DESC}) {
+          totalCount
+          edges {
+            node {
+              id
+              frontmatter {
+                path
+                title
+                role
+                company
+                companylogo
+                media
+                medialarge
+                tags
+              }
+            }
+          }
         }
-    }
-
-    render() {
-        if(!this.state.projects) return null;
-        return (
-            <div className="projects">
-                {
-                    this.state.projects.map((project, index) => {
-                        return <Project key={index} project={project} />
-                    })
-                }
-            </div>
-        )
-    }
-}
-
-export default Projects
+      }      
+      `}
+      render={data => <Projects data={data} {...props} />}
+    />
+  )
