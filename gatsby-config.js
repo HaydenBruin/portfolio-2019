@@ -15,14 +15,21 @@ module.exports = {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `jobs`,
-                path: `${__dirname}/public/jobs`,
+                path: `${__dirname}/src/data/jobs`,
             },
         },
         {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `projects`,
-                path: `${__dirname}/public/projects`,
+                path: `${__dirname}/src/data/projects`,
+            },
+        },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `blogs`,
+                path: `${__dirname}/src/data/blogs`,
             },
         },
         'gatsby-transformer-sharp',
@@ -39,11 +46,7 @@ module.exports = {
             },
         },
         `gatsby-plugin-sass`,
-        `gatsby-transformer-remark`,
-        {
-            resolve: `gatsby-plugin-create-client-paths`,
-            options: { prefixes: [`/app/*`] },
-        },
+        `gatsby-transformer-remark`
         
         // this (optional) plugin enables Progressive Web App + Offline functionality
         // To learn more, visit: https://gatsby.app/offline
