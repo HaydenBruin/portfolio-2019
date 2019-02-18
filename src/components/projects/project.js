@@ -3,23 +3,28 @@ import { Link } from 'gatsby'
 
 class Project extends Component {
     render() {
+        const project = this.props.project;
         return (
-            <Link to={'/projects/' + this.props.project.slug + '/'} className="projects__project">
+            <Link to={project.path} className="projects__project">
                 <div className="projects__project--imgwrapper">
-                    <img src={this.props.project.media} alt={this.props.project.title} />
+                    <img src={project.media} alt={project.title} />
                 </div>
                 <div className="projects__project--content">
-                    <div className="date">{this.props.project.date}</div>
+                    <div className="date">{project.date}</div>
                     <div className="dash"></div>
-                    <div className="title">{this.props.project.title}</div>
-                    <div className="role">{this.props.project.role}</div>
-                    <div className="tags">
-                        {
-                            this.props.project.tags.map((tag, index) => {
-                                return <div key={index} className={"tag " + tag.toLowerCase()}>{tag}</div>
-                            })
-                        }
-                    </div>
+                    <div className="title">{project.title}</div>
+                    <div className="role">{project.role}</div>
+                    {
+                        project.tags && (
+                            <div className="tags">
+                                {
+                                    project.tags.split(',').map((tag, index) => {
+                                        return <div key={index} className={"tag " + tag.toLowerCase()}>{tag}</div>
+                                    })
+                                }
+                            </div>
+                        )
+                    }
                 </div>
             </Link>
         )

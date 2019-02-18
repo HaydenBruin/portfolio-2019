@@ -1,22 +1,24 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-//import Project from './project'
-//<Project key={index} project={project} />
+import Project from './project'
+
 const Projects = ({ data }) => (
     <div className="projects">
-    {
-        data.allMarkdownRemark.edges.map((project) => {
-            <Project project={project.node.frontmatter} />
-        })
-    }
+        {
+            data.allMarkdownRemark.edges.map((project, index) => {
+                return (
+                    <Project key={index} project={project.node.frontmatter} />
+                )
+            })
+        }
     </div>
-  )
+)
 
 export default props => (
     <StaticQuery
-      query={graphql`
+        query={graphql`
       {
-        allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/projects/"}}, sort: {fields: [frontmatter___date], order: DESC}) {
+        allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/project-storage/"}}, sort: {fields: [frontmatter___date], order: DESC}) {
           totalCount
           edges {
             node {
@@ -36,6 +38,6 @@ export default props => (
         }
       }      
       `}
-      render={data => <Projects data={data} {...props} />}
+        render={data => <Projects data={data} {...props} />}
     />
-  )
+)

@@ -15,21 +15,21 @@ module.exports = {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `jobs`,
-                path: `${__dirname}/src/data/jobs`,
+                path: `${__dirname}/src/data/job-storage`,
             },
         },
         {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `projects`,
-                path: `${__dirname}/src/data/projects`,
+                path: `${__dirname}/src/data/project-storage`,
             },
         },
         {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `blogs`,
-                path: `${__dirname}/src/data/blogs`,
+                path: `${__dirname}/src/data/blog-storage`,
             },
         },
         'gatsby-transformer-sharp',
